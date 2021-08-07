@@ -35,7 +35,7 @@ public class Task1_1 {
         System.out.println(hogeString);
 
         // ⑧変数 hogeDouble の値を表示
-        System.out.println(hogeDouble);
+        System.out.println(hogeDouble); 
 
     }
 }
