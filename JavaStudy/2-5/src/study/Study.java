@@ -37,7 +37,7 @@ public class Study {
         // ② 以下の「shopMap.put(shohinList.get(1), 180);」の処理について、コメントを記述してください。
         /*
          * 
-         *LinkedHashMapクラスのshopMapをインスタント	し、putメソッドでキーにshohinListの要素とそれに紐づく数字の要素を追加している。
+         *LinkedHashMapクラスのshopMapをインスタントし、putメソッドでキーにshohinListの要素とそれに紐づく数字の要素を追加している。
          */
         LinkedHashMap<String, Integer> shopMap = new LinkedHashMap<String, Integer>();
         shopMap.put(shohinList.get(0), 125);
