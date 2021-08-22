@@ -81,13 +81,36 @@ background: #d98d30;
     .header{
         width:150px;
     }
+    .wrapper{
+        width:150px;
+    }
+    .left{
+        width:150px;
+        height:100px;
+        float:none;
+    }
     .right{
         width:150px;
+        height:350px;
+        float:none;
+    }
+    .right-upper{
+        height:250px;
+    }
+    .right-lower{
+        height:100px;
+    }
+    .right-upper-left{
+        width:150px;
+        height:150px;
+        float:none;  
+    }
+    .right-upper-right{
+        width:150px;
+        height:100px;
+        float:none;
     }
     .footer{
-        width:150px;
-    }
-    *{
-        float:none;
+    width:150px;
     }
 }
