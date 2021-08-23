@@ -22,14 +22,12 @@
 
 }
 .header-box2{
-    z-index: 2;
     width:40;
     height:40;
     background: #a9004b;
     position:absolute;
 }
 .header-box3{
-    z-index: 2;
     width:40;
     height:40;
     background: #a9004b;
