@@ -37,12 +37,12 @@
 .right-upper-left{
     width:150px;
     height:150px; 
-    float:left;  
+    float:right;  
 }
 .right-upper-right{
     width:100px;
     height:150px;
-    float:left;
+    float:right;
     background: #ff9e6b;
 }
 .right-upper-left-upper{
