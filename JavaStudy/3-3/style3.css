@@ -1,0 +1,72 @@
+*{
+    margin:0;
+    padding:0;
+ }
+.wrapper{
+    width:400px;
+        margin:0 auto;
+}
+
+/* hederの上にヘッダーボックスが表示されない。 */
+.header{
+    height:100px;
+    background: #141f40;
+    position:relative;
+    display:flex;
+}
+.header-box1{
+    width:40;
+    height:40;
+    background: #a9004b;
+    position:absolute;
+
+}
+.header-box2{
+    z-index: 2;
+    width:40;
+    height:40;
+    background: #a9004b;
+    position:absolute;
+}
+.header-box3{
+    z-index: 2;
+    width:40;
+    height:40;
+    background: #a9004b;
+    position:absolute;
+}
+/* 
+.contents{ 
+    height:250px;
+    display:flex;
+}
+.left{
+    width:150px;
+    background: #80bfa8;
+}
+.right{
+    width:250px;
+    background: #8c2727;
+}
+.right-box1{
+    width:140;
+    height:40;
+    background: #a9004b;
+    position:absolute;
+}
+.right-box2{
+    width:140;
+    height:40;
+    background: #a9004b;
+    position:absolute;
+}
+.right-box3{
+    width:140;
+    height:40;
+    background: #a9004b;
+    position:absolute;
+}
+.footer{
+    height:100px;
+    background: #d98d30;
+}
