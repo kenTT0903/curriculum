@@ -6,34 +6,38 @@
     width:400px;
         margin:0 auto;
 }
-
-/* hederの上にヘッダーボックスが表示されない。 */
 .header{
     height:100px;
     background: #141f40;
     position:relative;
+}
+.header-boxes{
+    top:20px;
+    right:20px;
     display:flex;
+    position:absolute;
+    box-sizing:border-box;
 }
 .header-box1{
-    width:40;
-    height:40;
+    width:40px;
+    height:40px;
     background: #a9004b;
-    position:absolute;
-
+    border:solid 10px white;
 }
 .header-box2{
-    width:40;
-    height:40;
+    width:40px;
+    height:40px;
     background: #a9004b;
-    position:absolute;
+    border-top:solid 10px white;
+    border-bottom:solid 10px white;
 }
-.header-box3{
-    width:40;
-    height:40;
+.header-box3{  
+    width:40px;
+    height:40px;
     background: #a9004b;
-    position:absolute;
+    border:solid 10px white;
+
 }
-/* 
 .contents{ 
     height:250px;
     display:flex;
@@ -45,26 +49,73 @@
 .right{
     width:250px;
     background: #8c2727;
+    position:relative;
+}
+.right-boxes{
+    width:140px;
+    position:absolute;
+    top:40px;
+    left:40px;
+    box-sizing:border-box;
 }
 .right-box1{
-    width:140;
-    height:40;
-    background: #a9004b;
-    position:absolute;
+    height:40px;
+    background: #ff863f;
+    border:5px solid white;
 }
 .right-box2{
-    width:140;
-    height:40;
-    background: #a9004b;
-    position:absolute;
+    height:40px;
+    background: #ff863f;
+    border:5px solid white;
+    margin:10px 0 0 0;
+
 }
 .right-box3{
-    width:140;
-    height:40;
-    background: #a9004b;
-    position:absolute;
-}
+    height:40px;
+    background: #ff863f;
+    border:5px solid white;
+    margin:10px 0 0 0;
+    }
 .footer{
     height:100px;
     background: #d98d30;
+}
+
+/*----------------------------------------------ここからレスポンシブ---------------------------------------------- */
+
+@media screen and (max-width:479px){
+    .wrapper{
+        width:200px;
+    }
+    .header{
+        height:210px;
+    }
+    .header-boxes{
+        top:25px;
+        right:70px;
+        display:block;
+    }
+    .header-box2{
+        background: #a9004b;
+        border-top:none;
+        border-bottom:none;
+        border-left:solid 10px white;
+        border-right:solid 10px white;
+    }
+    .contents{ 
+        height:300px;
+        display:block;
+    }
+    .left{
+        width:200px;
+        height:100px;
+        }
+    .right{
+        width:200px;
+        height:210px;
+    }
+    .right-boxes{
+        top:20px;
+        left:30px;
+    }
 }
