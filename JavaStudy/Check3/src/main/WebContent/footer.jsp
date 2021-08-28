@@ -9,8 +9,8 @@
 <body>
 
 <!-- フッターを作成 -->
-<div style=background-color:gray;>
-	<label style=display:inline-block;padding:10px;color:white;>hoge.Inc</label>
+<div class="footer">
+	<label class="company">hoge.Inc</label>
 </div>
 
 </body>

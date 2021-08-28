@@ -5,11 +5,12 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %>/css/style.css">
 </head>
 <body>
 <%@ include file="header.jsp"%>
 <!-- name、idの入力エリアを作成しなさい -->
-<div style=padding-top:50px;padding-bottom:50px;>
+<div class="input">
 	<table>
 		<tbody>
 			<tr>
