@@ -66,7 +66,7 @@ public class ExException {
                     case CONST_EXCEPTION_TRIGER_ARRAY_OUT_OF_BOUNDS:
                     // 問②: 「throw」を使用せずに「ArrayIndexOutOfBoundsException」を発生させる処理を記述しなさい。
                     // Tips: ご自身で配列を準備してください（使用する配列の型、要素数は自由）
-                    	int[] a = new int[1];
+                    	int[] a = new int[2];
                     	for(int i = 0; i <= 2; i++) {
                     		a[i] = i;
                     	}
@@ -89,7 +89,7 @@ public class ExException {
             }catch(ClassCastException e) {
             	printException(e);
             } finally {
-                System.out.println("リトライ回数 = " + retryCounter++);
+               System.out.println("リトライ回数 = " + retryCounter++);
             }
         } while (true);
 
@@ -103,12 +103,9 @@ public class ExException {
      * ルール1: private static void 任意のメソッド名 throws 上位へ投げるExceptionクラス名 { NullPointerExceptionを発生させる処理 }
      * ルール2: 例外発生時に設定するメッセージは、定義済みの定数から適当なものを指定してください。
      */
-    private static void Nullbo() {
-    	try {
-        throw new NullPointerException();
-    	}catch(NullPointerException e) {
-        System.out.println(e + ": " + CONST_MSG_NULLPO); 
-        }
+    private static void Nullbo() throws NullPointerException{
+    	String str = null;
+    	System.out.println(str.length());
     }
     /**
      * 例外処理のメッセージを出力
