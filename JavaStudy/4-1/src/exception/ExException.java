@@ -89,7 +89,7 @@ public class ExException {
             }catch(ClassCastException e) {
             	printException(e);
             } finally {
-               System.out.println("リトライ回数 = " + retryCounter++);
+               System.out.print("リトライ回数 = " + retryCounter++);
             }
         } while (true);
 
@@ -105,7 +105,14 @@ public class ExException {
      */
     private static void Nullbo() throws NullPointerException{
     	String str = null;
-    	System.out.println(str.length());
+    	try {
+    	    if (str == null) {
+    	        throw new NullPointerException(CONST_MSG_NULLPO);
+    	    }
+    	} catch (Exception e) {
+    	    System.out.println(e);
+    	  }
+
     }
     /**
      * 例外処理のメッセージを出力
