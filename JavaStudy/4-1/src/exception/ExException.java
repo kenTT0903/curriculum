@@ -105,14 +105,7 @@ public class ExException {
      */
     private static void Nullbo() throws NullPointerException{
     	String str = null;
-    	try {
-    	    if (str == null) {
-    	        throw new NullPointerException(CONST_MSG_NULLPO);
-    	    }
-    	} catch (Exception e) {
-    	    System.out.println(e);
-    	  }
-
+    	throw new NullPointerException(CONST_MSG_NULLPO);
     }
     /**
      * 例外処理のメッセージを出力
