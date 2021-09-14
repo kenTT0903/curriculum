@@ -35,7 +35,7 @@ public class EmployeeService {
  
   // 問③ 入力されたIDとPassWordをキーにして、検索するSELECT文
  /** ・SQL SELECT文 */
- private static final String SQL_SELECT = "SELECT ?, ? FROM employee_table";
+ private static final String SQL_SELECT = "SELECT * FROM employee_table where id = ? AND password = ?";
  
  EmployeeBean employeeDate = null;
  
@@ -68,8 +68,7 @@ String login_time = sdFormat.format(cal.getTime());
 preparedStatement = connection.prepareStatement(SQL_UPDATE);
 
   // 問④ preparedStatementを使って、一番目のindexに今の時間をセットしてください。2番目のindexにIDをセットしてください。
-for (int i = 0; i < 2; i++) {
- 	preparedStatement.setString(1, login_time);
+	preparedStatement.setString(1, login_time);
 	preparedStatement.setString(2, id);
 	
   // 問⑤ UPDATEを実行する文を記述
@@ -80,13 +79,12 @@ for (int i = 0; i < 2; i++) {
  */
  preparedStatement = connection.prepareStatement(SQL_SELECT);
   //問⑥ 一番目のindexにIDをセットしてください。2番目のindexにPASSWORDをセット。
- for (int j= 0; j < 2; j++) {
 	 preparedStatement.setString(1, id);
 	 preparedStatement.setString(2, password);
 
   // SQLを実行。実行した結果をresultSetに格納。
  resultSet = preparedStatement.executeQuery();
- }
+ 
  while (resultSet.next()) {
   // 問⑦ tmpName,tmpComment,tmpLoginTimeに適当な値を入れてください。
  String tmpName = resultSet.getString("name");
@@ -127,4 +125,4 @@ for (int i = 0; i < 2; i++) {
  }
  return employeeDate;
  }
-}get
+}
