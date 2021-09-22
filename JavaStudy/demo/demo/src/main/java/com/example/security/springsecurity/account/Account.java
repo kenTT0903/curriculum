@@ -1,4 +1,4 @@
-	package com.example.security.springsecurity.account;
+package com.example.security.springsecurity.account;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -10,6 +10,7 @@ import java.util.Set;
 import javax.persistence.Column;
 import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.FetchType;
 import javax.persistence.Id;
@@ -22,7 +23,6 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
-import sun.jvm.hotspot.debugger.cdbg.EnumType;
 
 //実行時に宣言した各フィールド変数がカラムとして作成される
 //問１－１ DB設計に必要なアノテーションを記述
@@ -73,6 +73,7 @@ public class Account implements UserDetails {
 		this.enabled = true;
 		this.authorities = EnumSet.of(Authority.ROLE_USER);
 	}
+
 
 	//登録時に、日時を自動セットする
 	@PrePersist
