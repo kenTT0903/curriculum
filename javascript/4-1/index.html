@@ -1,24 +1,29 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="CSS/style.css">
 </head>
 <body>
     <div id="app">
-        <span>{{ `残タスク数:${counter}/${list.length}` }}</span><br>
+        <span>{{ `残タスク数:${counter}/${Object.keys(list).length}` }}</span><br>
         <input type="text" v-model="addText" placeholder="ToDoを入力して">
         <button v-on:click="addToDo()">追加</button>
-        <button v-on:click="deleteBtn()">削除</button><hr>
+        <button v-on:click="deleteBtn(); Checked()">削除</button><br>
+        <input type="text" v-model="serchword" placeholder="キーワードを入力して"><hr>
         <ul v-if="list.length">
             <ul v-for="todo in list">
-                    <li>
-                        <span v-bind:class="{ done: todo.isChecked }"> 
-                                <input type="checkbox" v-model="todo.isChecked">{{ todo.text }}
-                        </span>
-                    </li>
+                <!--チェックがついた際のクラスを作成-->
+                <span v-bind:class="{ done: todo.isChecked }">
+                    <ul v-if="Serch">
+                        <li>
+                        <input type="checkbox" v-model="todo.isChecked" v-on:change="Checked()">{{todo.text}}
+                        </li>
+                    </ul>   
+                </span>
             </ul>
         </ul>
         <ul v-else>　
@@ -26,7 +31,7 @@
         </ul>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>
