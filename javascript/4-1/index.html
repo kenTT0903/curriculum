@@ -12,20 +12,35 @@
         <span>{{ `残タスク数:${counter}/${Object.keys(list).length}` }}</span><br>
         <input type="text" v-model="addText" placeholder="ToDoを入力して">
         <button v-on:click="addToDo()">追加</button>
-        <button v-on:click="deleteBtn(); Checked()">削除</button><br>
+        <button v-on:click="deleteBtn1(); deleteBtn2()">削除</button><br>
         <input type="text" v-model="serchword" placeholder="キーワードを入力して"><hr>
+
         <ul v-if="list.length">
-            <ul v-for="todo in list">
-                <!--チェックがついた際のクラスを作成-->
-                <span v-bind:class="{ done: todo.isChecked }">
-                    <ul v-if="Serch">
+
+            <ul v-if="Serch">
+            <ul makeserchlist></ul>
+                <ul v-for="serched in serchedlist">  
+                    <!--チェックがついた際のクラスを作成-->
+                    <span v-bind:class="{ done: serched.isChecked }">
                         <li>
-                        <input type="checkbox" v-model="todo.isChecked" v-on:change="Checked()">{{todo.text}}
+                            <input type="checkbox" v-model="serched.isChecked" v-on:change="Checked()">{{serched.text}}
                         </li>
-                    </ul>   
-                </span>
+                    </span>
+                </ul>
+            </ul> 
+
+            <ul v-else>
+                <ul v-for="todo in list">
+                    <!--チェックがついた際のクラスを作成-->
+                    <span v-bind:class="{ done: todo.isChecked }">
+                            <li>
+                            <input type="checkbox" v-model="todo.isChecked" v-on:change="Checked()">{{todo.text}}
+                            </li>
+                    </span>
+                </ul>
             </ul>
         </ul>
+
         <ul v-else>　
             <span>現在タスクはありません</span>
         </ul>
@@ -33,5 +48,5 @@
 
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
     <script src="js/main.js"></script>
-</body>
+</body> 
 </html>

@@ -2,9 +2,9 @@
     el: '#app',
     data: {
         list: [],
+        serchedlist: [],
         addText: '',
         serchword:'',
-        serchedlist: [],
         counter: 0,
     },
     //watchでlistの変更を監視
@@ -31,11 +31,21 @@
             }
             this.addText = '';
         },
-        deleteBtn: function() {
+
+        deleteBtn1: function() {
             this.list = this.list.filter(function(todo) {
                 return !todo.isChecked;
             });
+            this.Checked();
         },
+
+        deleteBtn2: function() {
+            this.list = this.list.filter(function(serched) {
+                return !serched.isChecked;
+            });
+            this.Checked();
+        },
+
         Checked: function(){
             this.counter = 0
             for (let i = 0; i < this.list.length; i++) {
@@ -44,8 +54,22 @@
             }
         }
       },
+
         Serch: function(){
-            return todo.text.indexOf(this.serchword);
+           return this.list.text.indexOf(this.serchword);
     }
+    },
+    
+    computed:{
+        makeserchedlist: function(){
+            for (let i = 0; i < this.list.length; i++) {
+                if (this.list[i].text.indexOf(this.serchword)) {
+                    this.serchedlist[i] = this.list[i];
+                }
+            }
+                return this.serchedlist;
+        }
     }
     }); 
+
+    /*ifで条件分岐して、forで表示。 */
